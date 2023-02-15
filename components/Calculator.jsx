@@ -5,10 +5,16 @@ import ButtonPanel from './ButtonPanel'
 function Calculator() {
   const [operation, setOperation] = useState('')
 
+  const concatenateNextChar =(nextChar)=>{
+    let copy = operation;
+    copy += nextChar
+    setOperation(copy)
+  }
+
   return (
     <div className='calculator-body'>
       <Display operation={operation} />
-      <ButtonPanel />
+      <ButtonPanel addChar={concatenateNextChar} />
     </div>
   )
 }
