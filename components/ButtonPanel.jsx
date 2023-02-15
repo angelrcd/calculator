@@ -1,12 +1,12 @@
 import React from 'react'
 
-function ButtonPanel( {addChar} ) {
+function ButtonPanel( {addChar, deleteLast} ) {
   return (
     <div className='button-panel'>
       <div onClick={() => addChar('7')} className="button">7</div>
       <div onClick={() => addChar('8')} className="button">8</div>
       <div onClick={() => addChar('9')} className="button">9</div>
-      <div className="button">DEL</div>
+      <div  onClick={deleteLast} className="button">DEL</div>
       <div className="button">AC</div>
       <div onClick={() => addChar('4')} className="button">4</div>
       <div onClick={() => addChar('5')} className="button">5</div>
