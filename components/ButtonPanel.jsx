@@ -11,17 +11,17 @@ function ButtonPanel() {
       <div className="button">4</div>
       <div className="button">5</div>
       <div className="button">6</div>
-      <div className="button">X</div>
-      <div className="button">/</div>
+      <div className="button operator-button">&#215;</div>
+      <div className="button operator-button">&#247; </div>
       <div className="button">1</div>
       <div className="button">2</div>
       <div className="button">3</div>
-      <div className="button">+</div>
-      <div className="button">-</div>
+      <div className="button operator-button">+</div>
+      <div className="button operator-button">-</div>
       <div className="button">0</div>
-      <div className="button">.</div>
+      <div className="button operator-button">.</div>
       <div className="button">Ans</div>
-      <div className="button equal-button">=</div>
+      <div className="button equal-button operator-button">=</div>
     </div>
   )
 }
