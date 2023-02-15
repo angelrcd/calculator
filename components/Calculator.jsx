@@ -17,10 +17,15 @@ function Calculator() {
     setOperation(copy)
   }
 
+  const emptyDisplay =()=>{
+    setOperation('')
+  }
+
   return (
     <div className='calculator-body'>
       <Display operation={operation} />
-      <ButtonPanel addChar={concatenateNextChar} deleteLast={deleteLastChar} />
+      <ButtonPanel addChar={concatenateNextChar} 
+      deleteLast={deleteLastChar} emptyDisplay={emptyDisplay} />
     </div>
   )
 }
