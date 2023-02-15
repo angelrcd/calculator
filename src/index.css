@@ -55,6 +55,23 @@ button:focus-visible {
 .display {
   height: 7em;
   background: white;
+  color: black;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.display p {
+  margin: 0;
+}
+
+.operation {
+  font-size: 1.5em;
+}
+
+.result {
+  align-self: flex-end;
+  font-size: 2em;
 }
 
 .button-panel {
