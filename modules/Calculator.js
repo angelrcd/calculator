@@ -14,6 +14,10 @@ export default class Calculator {
     }
   }
 
+  calculate(operationStr){
+    return this.calculateTwoNumbers(operationStr)
+  }
+
   calculateTwoNumbers(operationStr) {
     const [operator1, operation, operator2] = operationStr.split(" ")
 

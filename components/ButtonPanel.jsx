@@ -1,6 +1,6 @@
 import React from 'react'
 
-function ButtonPanel( {addChar, deleteLast, emptyDisplay} ) {
+function ButtonPanel( {addChar, deleteLast, emptyDisplay, displayResult} ) {
   return (
     <div className='button-panel'>
       <div onClick={() => addChar('7')} className="button">7</div>
@@ -21,7 +21,7 @@ function ButtonPanel( {addChar, deleteLast, emptyDisplay} ) {
       <div onClick={() => addChar('0')} className="button">0</div>
       <div onClick={() => addChar('.')} className="button operator-button">.</div>
       <div className="button">Ans</div>
-      <div className="button equal-button operator-button">=</div>
+      <div onClick={displayResult} className="button equal-button operator-button">=</div>
     </div>
   )
 }
