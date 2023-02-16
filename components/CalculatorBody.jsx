@@ -27,6 +27,7 @@ function CalculatorBody() {
 
   const emptyDisplay =()=>{
     setOperation('')
+    setResult('')
   }
 
   return (
