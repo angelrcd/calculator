@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import Display from './Display'
 import ButtonPanel from './ButtonPanel'
 
-function Calculator() {
+function CalculatorBody() {
   const [operation, setOperation] = useState('')
 
   const concatenateNextChar =(nextChar)=>{
@@ -30,4 +30,4 @@ function Calculator() {
   )
 }
 
-export default Calculator
+export default CalculatorBody

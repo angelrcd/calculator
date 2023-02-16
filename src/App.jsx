@@ -1,10 +1,10 @@
 import { useState } from 'react'
-import Calculator from '../components/Calculator'
+import CalculatorBody from '../components/CalculatorBody'
 
 function App() {
 
   return (
-    <Calculator />
+    <CalculatorBody />
   )
 }
 
