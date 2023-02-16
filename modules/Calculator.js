@@ -1,3 +1,5 @@
+import formatOperation from "./formatOperations"
+
 export default class Calculator {
   constructor(){
     this["+"] = function(a, b){
@@ -15,6 +17,7 @@ export default class Calculator {
   }
 
   calculate(operationStr){
+    operationStr = formatOperation(operationStr)
     return this.calculateTwoNumbers(operationStr)
   }
 
