@@ -1,13 +1,11 @@
 import React, { useState } from 'react'
-import Calculator from '../modules/Calculator'
+import calculate from '../modules/Calculator'
 import Display from './Display'
 import ButtonPanel from './ButtonPanel'
 
 function CalculatorBody() {
   const [operation, setOperation] = useState('')
   const [result, setResult] = useState('')
-
-  const calculator = new Calculator()
 
   const concatenateNextChar =(nextChar)=>{
     if(result !== ''){
@@ -22,7 +20,7 @@ function CalculatorBody() {
   }
 
   const displayResult =()=>{
-    setResult(calculator.calculate(operation))
+    setResult(calculate(operation))
   }
 
   const deleteLastChar =()=>{
