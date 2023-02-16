@@ -12,4 +12,6 @@ test('format operation with many operators', ()=>{
   expect(formatOperation('1+1+1')).toBe('1+1+1')
   expect(formatOperation('3-4+5-7')).toBe('3-4+5-7')
   expect(formatOperation('52×12÷6')).toBe('52*12/6')
+  expect(formatOperation('6×6×6×6')).toBe('6*6*6*6')
+  expect(formatOperation('6÷6÷6÷6')).toBe('6/6/6/6')
 })

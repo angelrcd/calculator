@@ -10,6 +10,12 @@ function CalculatorBody() {
   const calculator = new Calculator()
 
   const concatenateNextChar =(nextChar)=>{
+    if(result !== ''){
+      emptyDisplay()
+      setOperation(nextChar)
+      return
+    }
+
     let copy = operation
     copy += nextChar
     setOperation(copy)
@@ -20,6 +26,10 @@ function CalculatorBody() {
   }
 
   const deleteLastChar =()=>{
+    if(result !== ''){
+      return
+    }
+
     let copy = operation
     copy = copy.slice(0, -1)
     setOperation(copy)

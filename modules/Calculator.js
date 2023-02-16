@@ -18,6 +18,7 @@ export default class Calculator {
 
   calculate(operationStr){
     operationStr = formatOperation(operationStr)
+    console.log(operationStr);
 
     return eval(operationStr)
   }
