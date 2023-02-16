@@ -18,7 +18,8 @@ export default class Calculator {
 
   calculate(operationStr){
     operationStr = formatOperation(operationStr)
-    return this.calculateTwoNumbers(operationStr)
+
+    return eval(operationStr)
   }
 
   calculateTwoNumbers(operationStr) {
