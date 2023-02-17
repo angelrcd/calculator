@@ -28,3 +28,19 @@ test('test wrong syntax', ()=> {
   expect(calculate('9××××1')).toBe('Syntax Error')
   expect(calculate('9÷÷÷÷÷÷1')).toBe('Syntax Error')
 })
+
+test('operations with negative numbers', ()=>{
+  expect(calculate('5-9')).toBe(-4)
+  expect(calculate('-5-9')).toBe(-14)
+  expect(calculate('-5×10')).toBe(-50)
+  expect(calculate('-5×-10')).toBe(50)
+  expect(calculate('-20÷5')).toBe(-4)
+  expect(calculate('20÷-5')).toBe(-4)
+  expect(calculate('-20÷-5')).toBe(4)
+})
+
+test('wrong syntax with ans', ()=>{
+  expect(calculate('Ans.+3')).toBe('Syntax Error')
+  expect(calculate('.Ans+3')).toBe('Syntax Error')
+  expect(calculate('AnsAns+3')).toBe('Syntax Error')
+})

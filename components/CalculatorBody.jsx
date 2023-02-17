@@ -6,15 +6,15 @@ import ButtonPanel from './ButtonPanel'
 function CalculatorBody() {
   const [operation, setOperation] = useState('')
   const [resultHistory, setResultHistory] = useState([0])
-  const [hideResult, setHideResult] = useState(true)
+  const [isResultHidden, setIsResultHidden] = useState(true)
 
-  const result = hideResult ? "" : resultHistory.at(-1)
+  const result = isResultHidden ? "" : resultHistory.at(-1)
 
   const concatenateNextChar =(nextChar)=>{
-    if(!hideResult){
+    if(!isResultHidden){
       setOperation(nextChar)
       console.log("aqui");
-      setHideResult(true)
+      setIsResultHidden(true)
       return
     }
 
@@ -29,11 +29,11 @@ function CalculatorBody() {
     historyCopy.push(currentResult)
 
     setResultHistory(historyCopy)
-    setHideResult(false)
+    setIsResultHidden(false)
   }
 
   const deleteLastChar =()=>{
-    if(resultHistory !== ''){
+    if(!isResultHidden){
       return
     }
 
@@ -44,7 +44,7 @@ function CalculatorBody() {
 
   const emptyDisplay =()=>{
     setOperation('')
-    setHideResult(true)
+    setIsResultHidden(true)
   }
 
   return (

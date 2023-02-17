@@ -20,7 +20,7 @@ function ButtonPanel( {addChar, deleteLast, emptyDisplay, displayResult} ) {
       <div onClick={() => addChar('-')} className="button operator-button">-</div>
       <div onClick={() => addChar('0')} className="button">0</div>
       <div onClick={() => addChar('.')} className="button operator-button">.</div>
-      <div className="button">Ans</div>
+      <div onClick={() => addChar('Ans')} className="button">Ans</div>
       <div onClick={displayResult} className="button equal-button operator-button">=</div>
     </div>
   )
