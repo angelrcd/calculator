@@ -42,7 +42,11 @@ function CalculatorBody() {
     }
 
     let copy = operation
-    copy = copy.slice(0, -1)
+    if(copy.endsWith('Ans')){
+      copy = copy.slice(0, -3)
+    } else {
+      copy = copy.slice(0, -1)
+    }
     setOperation(copy)
   }
 
