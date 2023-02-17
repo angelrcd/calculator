@@ -39,8 +39,20 @@ test('operations with negative numbers', ()=>{
   expect(calculate('-20÷-5')).toBe(4)
 })
 
+test('calculate using Ans', ()=>{
+  expect(calculate('Ans', 0)).toBe(0)
+  expect(calculate('Ans', 5)).toBe(5)
+  expect(calculate('Ans+10', 5)).toBe(15)
+  expect(calculate('10-Ans', 5)).toBe(5)
+  expect(calculate('Ans×2', 3)).toBe(6)
+  expect(calculate('Ans÷2', 8)).toBe(4)
+  
+})
+
 test('wrong syntax with ans', ()=>{
   expect(calculate('Ans.+3')).toBe('Syntax Error')
   expect(calculate('.Ans+3')).toBe('Syntax Error')
   expect(calculate('AnsAns+3')).toBe('Syntax Error')
+  
 })
+

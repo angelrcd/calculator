@@ -8,7 +8,8 @@ function CalculatorBody() {
   const [resultHistory, setResultHistory] = useState([0])
   const [isResultHidden, setIsResultHidden] = useState(true)
 
-  const result = isResultHidden ? "" : resultHistory.at(-1)
+  const result = resultHistory.at(-1)
+  const resultDisplay = isResultHidden ? "" : result
 
   const concatenateNextChar =(nextChar)=>{
     if(!isResultHidden){
@@ -24,7 +25,7 @@ function CalculatorBody() {
   }
 
   const displayResult =()=>{
-    const currentResult = calculate(operation)
+    const currentResult = calculate(operation, result)
     const historyCopy = structuredClone(resultHistory)
     historyCopy.push(currentResult)
 
@@ -49,7 +50,7 @@ function CalculatorBody() {
 
   return (
     <div className='calculator-body'>
-      <Display operation={operation} result={result} />
+      <Display operation={operation} result={resultDisplay} />
       <ButtonPanel addChar={concatenateNextChar} 
       deleteLast={deleteLastChar} emptyDisplay={emptyDisplay}
       displayResult={displayResult} />
