@@ -25,6 +25,9 @@ function CalculatorBody() {
   }
 
   const displayResult =()=>{
+    if(operation==='' || !isResultHidden){
+      return
+    }
     const currentResult = calculate(operation, result)
     const historyCopy = structuredClone(resultHistory)
     historyCopy.push(currentResult)
