@@ -44,12 +44,11 @@ button:focus-visible {
 
 .calculator-body {
   width: 400px;
-  height: 500px;
-  background: grey;
+  height: 450px;
   margin: 10vh auto;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 
 .display {
@@ -90,6 +89,21 @@ button:focus-visible {
   display: flex;
   justify-content: center;
   align-items: center;
+  border-radius: 2px;
+
+  user-select: none;
+}
+
+.button:hover {
+  filter: brightness(95%);
+}
+
+.button:active {
+  transform: translateY(2px);
+}
+
+.orange-button {
+  background: orange;
 }
 
 .equal-button {
