@@ -7,6 +7,7 @@ function CalculatorBody() {
   const [operation, setOperation] = useState('')
   const [resultHistory, setResultHistory] = useState([0])
   const [isResultHidden, setIsResultHidden] = useState(true)
+  const [lastOpSyntaxError, setLastOpSyntaxError] = useState(false)
 
   const result = resultHistory.at(-1)
   const resultDisplay = isResultHidden ? "" : result
@@ -14,8 +15,8 @@ function CalculatorBody() {
   const concatenateNextChar =(nextChar)=>{
     if(!isResultHidden){
       setOperation(nextChar)
-      console.log("aqui");
       setIsResultHidden(true)
+      setLastOpSyntaxError(false)
       return
     }
 
@@ -30,11 +31,17 @@ function CalculatorBody() {
     }
     const currentResult = calculate(operation, result)
     const historyCopy = structuredClone(resultHistory)
-    historyCopy.push(currentResult)
 
-    setResultHistory(historyCopy)
-    setIsResultHidden(false)
-  }
+    if(currentResult !== 'Syntax Error'){
+      historyCopy.push(currentResult)
+      setResultHistory(historyCopy)
+      setIsResultHidden(false)
+    } else {
+      setLastOpSyntaxError(true)
+      setIsResultHidden(false)
+
+    }
+    }
 
   const deleteLastChar =()=>{
     if(!isResultHidden){
@@ -53,11 +60,12 @@ function CalculatorBody() {
   const emptyDisplay =()=>{
     setOperation('')
     setIsResultHidden(true)
+    setLastOpSyntaxError(false)
   }
 
   return (
     <div className='calculator-body'>
-      <Display operation={operation} result={resultDisplay} />
+      <Display operation={operation} result={resultDisplay} lastOpSyntaxError={lastOpSyntaxError}/>
       <ButtonPanel addChar={concatenateNextChar} 
       deleteLast={deleteLastChar} emptyDisplay={emptyDisplay}
       displayResult={displayResult} />
