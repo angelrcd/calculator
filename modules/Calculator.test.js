@@ -56,3 +56,10 @@ test('wrong syntax with ans', ()=>{
   
 })
 
+test('division by zero', ()=>{
+  expect(calculate('1÷0')).toBe('Syntax Error')
+  expect(calculate('1+4÷0')).toBe('Syntax Error')
+  expect(calculate('-5÷0')).toBe('Syntax Error')
+  
+})
+

@@ -7,7 +7,12 @@ export default function calculate(operationStr,ans = 0){
       throw new Err
     }
   
-    return eval(operationStr)
+    const result = eval(operationStr)
+    if(!isFinite(result)){
+      throw new Err
+    }
+
+    return result
   } catch(err) {
     return 'Syntax Error'
   }
