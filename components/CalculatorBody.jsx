@@ -21,7 +21,9 @@ function CalculatorBody() {
     }
 
     let copy = operation
-    copy += nextChar
+    if(copy.length < 20){
+      copy += nextChar
+    }
     setOperation(copy)
   }
 
