@@ -64,6 +64,8 @@ test('division by zero', ()=>{
 })
 
 test('operations with decimal numbers', ()=>{
-  expect(calculate('0.1+0.2')).toBe('0.3')
-  expect(calculate('0.2×6')).toBe('1.2')
+  expect(calculate('0.1+0.2')).toBe(0.3)
+  expect(calculate('0.2×6')).toBe(1.2)
+  expect(calculate('0.22222×3')).toBe(0.66666)
+  expect(calculate('0.3÷2')).toBe(0.15)
 })

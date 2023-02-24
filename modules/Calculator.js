@@ -12,7 +12,8 @@ export default function calculate(operationStr,ans = 0){
       throw new Err
     }
 
-    return result
+    return +result.toFixed(10)
+
   } catch(err) {
     return 'Syntax Error'
   }
