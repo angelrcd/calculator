@@ -69,6 +69,7 @@ button:focus-visible {
 
 .display p {
   margin: 0;
+  user-select: none;
 }
 
 .operation {
